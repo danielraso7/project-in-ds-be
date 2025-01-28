@@ -4,6 +4,7 @@ import goals from "./routes/goals_route.js";
 import friends from "./routes/friend_route.js";
 import trips from "./routes/trips_route.js";
 import profile from "./routes/profile_route.js";
+import cors from "cors";
 const port = process.env.PORT || 8000;
 
 const app = express();
@@ -11,6 +12,13 @@ const app = express();
 // Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(
+  cors({
+    origin: "http://localhost:5173", // TODO: replace with your Netlify URL
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 // Routes
 app.use("/trips", trips);
