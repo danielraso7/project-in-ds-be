@@ -8,7 +8,7 @@
     "dev": "node --watch --env-file=.env server"
   },
   "keywords": [],
-  "author": "Daniel Raso MSc",
+  "author": "Daniel Raso BSc",
   "license": "ISC",
   "description": "",
   "dependencies": {
